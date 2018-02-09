@@ -1,6 +1,10 @@
 # Lambda Image Sharp
+This lambda service resizes images. It generates multiple images of different sizes which could be used in the srcSet and sizes attributes in webpages.
 
-This lambda service resizes images. Currently it can
+
+## To Deploy
+serverless deploy -v
+
 1) Given an image and a desirable width (say `w`), it will create 6 images which are of width: 1/4w, 1/2w, w, 1.5w, 2w, and 3w
 
 These image sizes can be used to provide optimised images on a website using the img html tag along with the sizes attributes.
@@ -47,12 +51,7 @@ In your app/html you can dynamically evaluate the srcSet:
 Pass the srcSet to your images tag to get optimised pictures.
 
 
-## To Deploy
-serverless deploy -v
-
-
-
-## Documentation:
+### Documentation:
 
 image.js
 It receives the initial events in processItem. It returns an array of promises, each promise resolves to one processed file 
@@ -60,12 +59,10 @@ It invokes the get from s3
 It invokes the sharp API
 It invokes the uploads to s3
 
-
 s3.js
 It has default source and destination buckets.
 It implements the get from s3.
 It implements the uploads to s3.
-
 
 sharp.js
 The sharp APIs
