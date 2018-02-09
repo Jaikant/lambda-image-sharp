@@ -20,6 +20,7 @@ Lets say you want images of width : '200', '400', '800', '1200', '1600', '2400'
 
 Update the imgconfig.json file:
 
+```
   "output" : {
     "default" : {
        "outputdir": "defaulttest/",
@@ -30,6 +31,7 @@ Update the imgconfig.json file:
        "maxWidth": "800",
      }
   }
+  ```
 
 
 In the above we are telling the service:
@@ -40,6 +42,8 @@ This then creates images with the width of 200, 400, 800, 1200, 1600 & 2400.
 
 In your app/html you can dynamically evaluate the srcSet:
 
+```
+
    let sizesArray=['200', '400', '800', '1200', '1600', '2400']
    let scSet;
 
@@ -47,6 +51,8 @@ In your app/html you can dynamically evaluate the srcSet:
        return `urlofyourpicture ${size}w`
      }).reduce((total, value) => `${total},${value}`);
    }
+
+```
 
 Pass the srcSet to your images tag to get optimised pictures.
 
