@@ -1,0 +1,19 @@
+{
+  "name": "lambda-image-sharp",
+  "provider": {
+    "profile": "default",
+    "stage": "dev",
+    "region": "ap-south-1"
+  },
+  "sourceBucket": "sherpafeet-incoming-images",
+  "sourcePrefix": "",
+  "destinationBucket": "carabiner",
+  "destinationPrefix": "",
+  "s3": {
+    "params": {
+      "Metadata": {
+        "generator": "created by a lambda-image-sharp lambda function"
+      }
+    }
+  }
+}
